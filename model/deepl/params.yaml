@@ -3,7 +3,7 @@ model_dir: ../model/deepl
 batch_size: 10
 batch_size_test: 1000
 epochs: 100
-pos_weight: 10
+pos_weight: 5.9
 lr: 0.001
 momentum: 0.9
 topn_relevant_keywords: 1000
@@ -11,3 +11,4 @@ frac_relevant_keywords: 0.25
 w_marg_contr: 0.3
 w_count: 0.2
 w_sim : 0.5
+num_workers : 2
