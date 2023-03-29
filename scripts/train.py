@@ -32,6 +32,7 @@ class Net(nn.Module):
         self.fc1 = nn.Linear(x1_size, 10)
         self.fc2 = nn.Linear(10 + x2_size, 10)
         self.fc3 = nn.Linear(10, 1)
+        self.activation = nn.Sigmoid()
 
     def forward(self, x1, x2):
         x1 = self.batch_norm(x1)
@@ -42,6 +43,7 @@ class Net(nn.Module):
         x12 = F.dropout(x12, p=0.1, training=self.training)
         x12 = self.fc2(x12)
         out = self.fc3(x12)
+        out = self.activation(out)
         return out
 
 
